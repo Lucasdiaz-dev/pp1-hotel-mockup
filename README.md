@@ -1,4 +1,4 @@
-# Mockup Hotel Litoral – v1.4
+# Mockup Hotel Litoral – v1.5
 
 HTML + CSS estático, sin backend y sin JavaScript. Está alineado con la especificación de casos de uso v1.1 y el modelo de dominio v1.1.
 - Las páginas de administrador son solo para escritorio.
@@ -76,3 +76,9 @@ Al hacer clic en una foto se abre un lightbox sin JavaScript, con el patrón `:t
 - "Cerrar" (y el fondo oscuro) enlazan a `#`. "Anterior" y "Siguiente" enlazan a la foto vecina.
 
 En Symfony/Twig se puede repetir este mismo patrón con un `{% for imagen in habitacion.imagenes %}` que genere los ids `foto-{{ loop.index }}`, o reemplazarlo por un JS chico.
+
+## Mobile (v1.5)
+- Solo pantallas de visitante/cliente; admin sigue siendo solo escritorio.
+- Todo el ajuste está en un único bloque `@media (max-width:768px)` al final de `styles.css`: el escritorio no cambia (verificado píxel a píxel a 1280 px).
+- Header compacto (marca + Ingresar/Registrarse o usuario); el menú por rol pasa a una barra inferior fija con texto, sin íconos.
+- Grilla de una columna, chips de tipo con scroll horizontal, formularios y cards a ancho completo, inputs de 16 px y botones de al menos 44 px de alto.

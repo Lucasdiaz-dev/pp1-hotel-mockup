@@ -182,3 +182,83 @@ details.visor summary{list-style:none;display:inline-flex}details.visor summary:
 .pendcard h3{margin:16px 0 2px;font-size:19px;font-weight:600}.pbot{margin-top:auto;color:#666;font-size:15px;line-height:1.5}
 .pendtxt h1{font-size:40px;line-height:1.1;margin:0 0 12px;max-width:340px}.pendtxt p{margin:0 0 22px;color:#333}.pendtxt .btn{padding:12px 26px}
 @media (max-width:700px){.trip{grid-template-columns:1fr}.tph{order:-1;height:200px;border-radius:14px 14px 0 0}.pendwrap{flex-direction:column;padding:24px 16px;gap:28px}.pendcard{width:100%;min-height:0}.pendtxt h1{font-size:30px}}
+
+/* ---- v1.5: mobile (visitante / cliente). Solo dentro de este media query: el desktop no cambia. ---- */
+@media (max-width:768px){
+  body{font-size:16px}
+  html,body{overflow-x:hidden}
+  .shell{margin:0;padding:0}
+  .frame{border-radius:0;box-shadow:none;padding:12px 16px 96px}
+  /* header compacto: marca a la izquierda, usuario a la derecha */
+  .top{flex-wrap:nowrap;padding:8px 10px;gap:8px}
+  .brand{font-size:15px;gap:8px;white-space:nowrap}.brand .logo{width:30px;height:30px;font-size:13px}
+  .user,.top .user{width:auto;flex:0 0 auto;justify-content:flex-end;gap:6px;font-size:14px;white-space:nowrap}
+  .user .btn{min-height:44px;padding:0 12px}
+  .user a.muted{display:inline-flex;align-items:center;min-height:44px}
+  .avatar{width:28px;height:28px}
+  /* nav por rol -> barra inferior fija con texto (sin íconos) */
+  .pillnav{position:fixed;left:0;right:0;bottom:0;z-index:40;flex-wrap:nowrap;gap:0;background:#fff;border-top:1px solid var(--line);border-radius:0;padding:0 0 env(safe-area-inset-bottom)}
+  .pillnav a{flex:1;display:flex;align-items:center;justify-content:center;min-height:60px;font-size:13px;color:var(--muted);border-radius:0;padding:0 4px;border-top:2px solid transparent}
+  .pillnav a.on,.pillnav a:hover{background:#fff;color:var(--ink);font-weight:700;border-top-color:var(--ink)}
+  .pillnav .sep{display:none}
+  .crumbs{margin:14px 0 6px}
+  h1{font-size:26px;margin-bottom:14px}
+  .hero{height:190px;border-radius:var(--r)}.hero h1{font-size:26px;left:18px;right:18px;bottom:12px}
+  /* formularios: ancho completo, sin zoom en iOS, tap targets >= 44px */
+  input,select,textarea{font-size:16px;min-height:48px}
+  label.check input,label.radio input{min-height:0}
+  .btn{min-height:44px}
+  .searchbar{grid-template-columns:1fr 1fr;padding:14px;gap:12px}
+  .searchbar>*:first-child,.searchbar>*:nth-child(2){grid-column:auto}
+  .searchbar>*:nth-child(3),.searchbar>*:last-child{grid-column:1/-1}
+  .searchbar .btn{width:100%;min-height:48px}
+  /* chips con scroll horizontal */
+  .chips{flex-wrap:nowrap;overflow-x:auto;margin:12px -16px 0;padding:0 16px 4px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto;min-height:40px;display:inline-flex;align-items:center;padding:0 16px;font-size:14px;border-radius:var(--pill)}
+  /* grilla de habitaciones: una columna */
+  .grid{grid-template-columns:1fr;gap:18px}
+  .room .body{padding:14px 16px 16px}.room p{font-size:14px}
+  /* detalle */
+  .detail{grid-template-columns:1fr;gap:16px}
+  .specs{grid-template-columns:1fr 1fr}.specs div:nth-child(2){border-right:0}.specs div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .panel{padding:16px}
+  .lb-box{max-width:100vw;width:100vw;border-radius:0}
+  .lb-box img{max-height:70vh}
+  .lb-bar{gap:4px;padding:8px 10px}.lb-bar a{min-height:44px;display:inline-flex;align-items:center;padding:0 8px}
+  /* confirmar: fechas en 3 columnas compactas */
+  .panel .tiles{grid-template-columns:repeat(3,1fr);gap:8px}
+  .panel .tile{padding:12px 10px;font-size:13px}.panel .tile b{font-size:20px}
+  .darkcard{padding:18px;border-radius:var(--r)}
+  /* login / registro */
+  .auth{min-height:0;margin-top:12px;border-radius:var(--r)}
+  .auth .art{min-height:150px;padding:18px}
+  .auth form{padding:22px 18px}
+  .form{grid-template-columns:1fr}
+  .form .btn,.auth form .btn{width:100%}
+  /* mis reservas */
+  .tripsh{font-size:26px}.tinfo{padding:18px}
+  .tact .confirm summary.btn{min-height:44px}
+  .confirmbox{width:min(320px,calc(100vw - 64px))}
+  .pendtxt .btn{min-height:48px}
+  footer{margin:24px 0 0}
+  .searchbar>div{min-width:0}.searchbar input{min-width:0;padding:11px 8px}
+  .hero h1{line-height:1.15}
+  .darkcard .sum .row{justify-content:space-between;flex-wrap:nowrap}
+  /* v1.5b: nav pill flotante como en desktop */
+  .pillnav{left:50%;right:auto;bottom:calc(14px + env(safe-area-inset-bottom));transform:translateX(-50%);background:var(--ink);border:0;border-radius:var(--pill);padding:5px;gap:2px;box-shadow:0 8px 24px rgba(20,20,30,.22);width:max-content;max-width:calc(100vw - 24px)}
+  .pillnav a{flex:0 0 auto;min-height:44px;padding:0 16px;color:#cfcfd6;border-radius:var(--pill);border-top:0;font-size:14px}
+  .pillnav a.on,.pillnav a:hover{background:#fff;color:var(--ink);font-weight:600}
+  /* Ingresar como link de texto */
+  .user .btn:not(.dark){border:0;background:none;padding:0 8px}
+  /* detalle: título, tipo y estrellas en líneas separadas */
+  .row:has(> h1 .htipo){flex-direction:column;align-items:flex-start;gap:6px}
+  .tdot{display:none}
+  .htipo{display:block;margin-top:4px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  /* lightbox: flechas y cruz */
+  .lb-bar .lbprev,.lb-bar .lbnext,.lb-bar .lbclose{font-size:0;min-width:44px;justify-content:center;text-decoration:none}
+  .lb-bar .lbprev::before{content:"‹";font-size:30px;line-height:1}
+  .lb-bar .lbnext::before{content:"›";font-size:30px;line-height:1}
+  .lb-bar .lbclose::before{content:"×";font-size:26px;line-height:1}
+  .lb-bar .lbclose{padding:0;border-radius:50%;width:44px}
+}
