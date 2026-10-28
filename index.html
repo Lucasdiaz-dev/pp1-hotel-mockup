@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- Twig: todo este esqueleto = templates/base.html.twig.
+     <header> = {% include '_header.html.twig' %} (menú según is_granted: visitante / ROLE_USER / ROLE_ADMIN);
+     el contenido de <main> = {% block body %}; .flash = loop de app.flashes en base. {% block title %} = <title>. -->
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Buscar habitaciones · Hotel Litoral</title><link rel="stylesheet" href="styles.css"></head>
+<body><div class="shell"><div class="frame">
+<header class="top"><a class="brand" href="index.html"><span class="logo">HL</span>Hotel Litoral</a>
+<nav class="pillnav"><a href="index.html" class="on">Buscar</a><a href="mis-reservas.html">Mis reservas</a><a href="perfil.html">Mi perfil</a></nav>
+<div class="user"><a class="btn" href="login.html">Ingresar</a><a class="btn dark" href="registro.html">Registrarse</a></div></header>
+<main><div class="crumbs">Inicio › Buscar</div>
+<!-- {% block body %} -->
+<!-- CU003 – público. Solo habitaciones activas y disponibles en el período. La imagen de cada card es la PORTADA; ★ = Habitacion.estrellas. -->
+<div class="hero"><img src="img/hero-piscina.jpg" alt=""><h1>Encontrá tu habitación en Santa Fe</h1></div>
+<form class="searchbar" action="index.html"><div><label>Fecha de ingreso</label><input type="date" value="2026-11-20"></div>
+<div><label>Fecha de egreso</label><input type="date" value="2026-11-23"></div>
+<div><label>Huéspedes</label><select><option>1</option><option selected>2</option><option>3</option><option>4</option></select><!-- opciones 1..máxima capacidad entre las habitaciones activas --></div>
+<button class="btn dark" type="submit">Buscar</button></form>
+<div class="chips"><span class="chip on">Todas</span><span class="chip">Simple</span><span class="chip">Doble</span><span class="chip">Suite</span></div>
+<p class="muted" style="margin-top:18px">6 habitaciones disponibles del 20/11 al 23/11</p><div class="grid"><article class="room"><div class="ph"><img src="img/habitacion-single.jpg" alt="Portada habitación 101"><span class="tag">Hasta 1 huésp.</span></div><div class="body">
+<div class="row"><h3>Habitación 101 · Simple</h3><span class="stars" title="4 estrellas">★★★★</span></div><p>Compacta y luminosa, escritorio y wifi.</p><div class="row"><span class="price"><b>$34.000</b> <span>/ noche</span></span>
+<a class="btn" href="habitacion.html">Ver habitación</a></div></div></article><article class="room"><div class="ph"><img src="img/habitacion-doble.jpg" alt="Portada habitación 102"><span class="tag">Hasta 2 huésp.</span></div><div class="body">
+<div class="row"><h3>Habitación 102 · Doble</h3><span class="stars" title="4 estrellas">★★★★</span></div><p>Dos camas, escritorio y vista a la costanera.</p><div class="row"><span class="price"><b>$50.000</b> <span>/ noche</span></span>
+<a class="btn dark" href="habitacion.html">Ver habitación</a></div></div></article><article class="room"><div class="ph"><img src="img/habitacion-junior.jpg" alt="Portada habitación 201"><span class="tag">Hasta 3 huésp.</span></div><div class="body">
+<div class="row"><h3>Habitación 201 · Doble</h3><span class="stars" title="4 estrellas">★★★★</span></div><p>Cama doble + sofá cama, living integrado.</p><div class="row"><span class="price"><b>$60.000</b> <span>/ noche</span></span>
+<a class="btn" href="habitacion.html">Ver habitación</a></div></div></article><article class="room"><div class="ph"><img src="img/habitacion-familiar.jpg" alt="Portada habitación 202"><span class="tag">Hasta 4 huésp.</span></div><div class="body">
+<div class="row"><h3>Habitación 202 · Suite</h3><span class="stars" title="5 estrellas">★★★★★</span></div><p>Ideal para familias, dos ambientes.</p><div class="row"><span class="price"><b>$91.000</b> <span>/ noche</span></span>
+<a class="btn" href="habitacion.html">Ver habitación</a></div></div></article><article class="room"><div class="ph"><img src="img/habitacion-suite.jpg" alt="Portada habitación 301"><span class="tag">Hasta 2 huésp.</span></div><div class="body">
+<div class="row"><h3>Habitación 301 · Suite</h3><span class="stars" title="5 estrellas">★★★★★</span></div><p>Balcón al Paraná y bañera.</p><div class="row"><span class="price"><b>$78.000</b> <span>/ noche</span></span>
+<a class="btn" href="habitacion.html">Ver habitación</a></div></div></article><article class="room"><div class="ph"><img src="img/habitacion-loft.jpg" alt="Portada habitación 302"><span class="tag">Hasta 2 huésp.</span></div><div class="body">
+<div class="row"><h3>Habitación 302 · Suite</h3><span class="stars" title="5 estrellas">★★★★★</span></div><p>Doble altura y terraza privada.</p><div class="row"><span class="price"><b>$84.000</b> <span>/ noche</span></span>
+<a class="btn" href="habitacion.html">Ver habitación</a></div></div></article></div>
+<!-- {% endblock %} --></main></div>
+<footer>Hotel Litoral · Mockup PP1 v1.4 – no funcional · Vistas: <a href="index.html"><u>visitante</u></a> · <a href="mis-reservas.html"><u>cliente</u></a> · <a href="admin-habitaciones.html"><u>administrador</u></a></footer></div></body></html>

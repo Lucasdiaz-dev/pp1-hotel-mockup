@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<!-- Twig: todo este esqueleto = templates/base.html.twig.
+     <header> = {% include '_header.html.twig' %} (menú según is_granted: visitante / ROLE_USER / ROLE_ADMIN);
+     el contenido de <main> = {% block body %}; .flash = loop de app.flashes en base. {% block title %} = <title>. -->
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Confirmar reserva · Hotel Litoral</title><link rel="stylesheet" href="styles.css"></head>
+<body><div class="shell"><div class="frame">
+<header class="top"><a class="brand" href="index.html"><span class="logo">HL</span>Hotel Litoral</a>
+<nav class="pillnav"><a href="index.html">Buscar</a><a href="mis-reservas.html">Mis reservas</a><a href="perfil.html">Mi perfil</a></nav>
+<div class="user"><span class="avatar"></span>Lucas D. · <a href="index.html" class="muted">Salir</a></div></header>
+<main><div class="crumbs">Inicio › Habitación 102 › Confirmar</div>
+<!-- {% block body %} -->
+<!-- CU005 – total = noches × precioPorNoche vigente; se guarda en Reserva.total. -->
+<h1>Confirmar reserva</h1><div class="detail"><div class="panel"><div class="row" style="justify-content:flex-start;gap:16px"><img class="thumb" src="img/habitacion-doble.jpg" alt="" style="width:96px;height:72px"><div><h2 style="margin:0">Habitación 102 · Doble</h2><p class="muted">Capacidad máxima 2 · 2 huéspedes</p></div></div>
+<div class="tiles" style="margin-top:18px"><div class="tile"><small>Ingreso</small><b>20/11</b>vie 2026</div><div class="tile"><small>Egreso</small><b>23/11</b>lun 2026</div><div class="tile"><small>Noches</small><b>3</b>estadía</div></div>
+<div class="note">Titular: Lucas Díaz · lucas@email.com · 342 555-1234</div></div>
+<div class="darkcard"><h2 style="margin-top:0">Resumen</h2><div class="sum" style="border-color:#33333b">
+<div class="row"><span class="muted">Precio por noche</span><span>$50.000</span></div>
+<div class="row"><span class="muted">Noches</span><span>3</span></div>
+<div class="row"><span class="muted">Huéspedes</span><span>2</span></div>
+<div class="row"><span class="muted">3 noches × $50.000</span><span>$150.000</span></div>
+<div class="row" style="font-size:18px"><b>Total</b><b>$150.000</b></div></div>
+<p class="muted" style="font-size:12px;margin-top:8px">La reserva queda Pendiente hasta que el hotel se comunique con vos para coordinar el pago. El total queda fijado al confirmar: si después cambia el precio de la habitación, tu reserva no se modifica.</p>
+<a class="btn block" style="margin-top:16px" href="reserva-pendiente.html">Confirmar reserva</a><a class="btn block" style="margin-top:8px;background:transparent;color:#fff;border-color:#33333b" href="habitacion.html">Volver</a></div></div>
+<!-- {% endblock %} --></main></div>
+<footer>Hotel Litoral · Mockup PP1 v1.4 – no funcional · Vistas: <a href="index.html"><u>visitante</u></a> · <a href="mis-reservas.html"><u>cliente</u></a> · <a href="admin-habitaciones.html"><u>administrador</u></a></footer></div></body></html>

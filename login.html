@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- Twig: todo este esqueleto = templates/base.html.twig.
+     <header> = {% include '_header.html.twig' %} (menú según is_granted: visitante / ROLE_USER / ROLE_ADMIN);
+     el contenido de <main> = {% block body %}; .flash = loop de app.flashes en base. {% block title %} = <title>. -->
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ingresar · Hotel Litoral</title><link rel="stylesheet" href="styles.css"></head>
+<body><div class="shell"><div class="frame">
+<header class="top"><a class="brand" href="index.html"><span class="logo">HL</span>Hotel Litoral</a>
+<nav class="pillnav"><a href="index.html">Buscar</a><a href="mis-reservas.html">Mis reservas</a><a href="perfil.html">Mi perfil</a></nav>
+<div class="user"><a class="btn" href="login.html">Ingresar</a><a class="btn dark" href="registro.html">Registrarse</a></div></header>
+<main><div class="crumbs">Inicio › Ingresar</div>
+<!-- {% block body %} -->
+<!-- CU002 – login único para cliente y administrador (email + contraseña). Según el rol redirige a index o al panel admin. -->
+<div class="auth"><div class="art"><img src="img/exterior-noche.jpg" alt=""><div class="darkcard"><b style="font-size:20px">Bienvenido de nuevo</b><p class="muted">Ingresá para reservar, ver tus reservas o administrar el hotel.</p></div></div>
+<form action="confirmar.html"><!-- Banner solo si viene de "Reservar" sin sesión (CU005 FA03). Error genérico solo si falla el login. -->
+<div class="flash info">Iniciá sesión para continuar con tu reserva.</div>
+<h1 style="margin:0">Iniciar sesión</h1>
+<div class="flash error">Email o contraseña incorrectos.</div>
+<div><label>Email</label><input type="email" placeholder="tu@email.com"></div>
+<div><label>Contraseña</label><input type="password" placeholder="••••••••"></div><button class="btn dark block">Ingresar</button>
+<p class="muted">¿No tenés cuenta? <a href="registro.html"><u>Registrate</u></a></p></form></div>
+<!-- {% endblock %} --></main></div>
+<footer>Hotel Litoral · Mockup PP1 v1.4 – no funcional · Vistas: <a href="index.html"><u>visitante</u></a> · <a href="mis-reservas.html"><u>cliente</u></a> · <a href="admin-habitaciones.html"><u>administrador</u></a></footer></div></body></html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- Twig: todo este esqueleto = templates/base.html.twig.
+     <header> = {% include '_header.html.twig' %} (menú según is_granted: visitante / ROLE_USER / ROLE_ADMIN);
+     el contenido de <main> = {% block body %}; .flash = loop de app.flashes en base. {% block title %} = <title>. -->
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Registro · Hotel Litoral</title><link rel="stylesheet" href="styles.css"></head>
+<body><div class="shell"><div class="frame">
+<header class="top"><a class="brand" href="index.html"><span class="logo">HL</span>Hotel Litoral</a>
+<nav class="pillnav"><a href="index.html">Buscar</a><a href="mis-reservas.html">Mis reservas</a><a href="perfil.html">Mi perfil</a></nav>
+<div class="user"><a class="btn" href="login.html">Ingresar</a><a class="btn dark" href="registro.html">Registrarse</a></div></header>
+<main><div class="crumbs">Inicio › Registro</div>
+<!-- {% block body %} -->
+<!-- CU001 – sin nombre de usuario; el email es único. -->
+<div class="auth"><div class="art"><img src="img/exterior-atardecer.jpg" alt=""><div class="darkcard"><b style="font-size:20px">Creá tu cuenta</b><p class="muted">Con tu email vas a poder reservar y seguir tus reservas.</p></div></div>
+<form action="login.html"><h1 style="margin:0">Registro</h1>
+<div class="form2"><div><label>Nombre <span class="req">*</span></label><input required placeholder="Lucas"></div><div><label>Apellido <span class="req">*</span></label><input required placeholder="Díaz"></div></div>
+<div><label>Email <span class="req">*</span></label><input type="email" required placeholder="tu@email.com"></div>
+<div><label>Teléfono <span class="req">*</span></label><input type="tel" required placeholder="342 555-1234"></div>
+<div><label>Contraseña <span class="req">*</span></label><input type="password" required></div>
+<div><label>Repetir contraseña <span class="req">*</span></label><input type="password" required></div>
+<!-- Error ej.: "Ya existe una cuenta registrada con ese email." -->
+<button class="btn dark block">Crear cuenta</button>
+<p class="muted"><span class="req">*</span> Campos obligatorios · ¿Ya tenés cuenta? <a href="login.html"><u>Ingresá</u></a></p></form></div>
+<!-- {% endblock %} --></main></div>
+<footer>Hotel Litoral · Mockup PP1 v1.4 – no funcional · Vistas: <a href="index.html"><u>visitante</u></a> · <a href="mis-reservas.html"><u>cliente</u></a> · <a href="admin-habitaciones.html"><u>administrador</u></a></footer></div></body></html>

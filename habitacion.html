@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- Twig: todo este esqueleto = templates/base.html.twig.
+     <header> = {% include '_header.html.twig' %} (menú según is_granted: visitante / ROLE_USER / ROLE_ADMIN);
+     el contenido de <main> = {% block body %}; .flash = loop de app.flashes en base. {% block title %} = <title>. -->
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Habitación 102 · Hotel Litoral</title><link rel="stylesheet" href="styles.css"></head>
+<body><div class="shell"><div class="frame">
+<header class="top"><a class="brand" href="index.html"><span class="logo">HL</span>Hotel Litoral</a>
+<nav class="pillnav"><a href="index.html" class="on">Buscar</a><a href="mis-reservas.html">Mis reservas</a><a href="perfil.html">Mi perfil</a></nav>
+<div class="user"><a class="btn" href="login.html">Ingresar</a><a class="btn dark" href="registro.html">Registrarse</a></div></header>
+<main><div class="crumbs">Inicio › Buscar › Habitación 102</div>
+<!-- {% block body %} -->
+<!-- CU004 – público, NO depende de fechas. Solo habitaciones activas. Galería = todas las imágenes asignadas, empezando por la portada. -->
+<div class="detail"><div><div class="gallery g4"><figure class="main"><a href="#foto-1"><img src="img/habitacion-doble.jpg" alt="Foto 1"></a><span class=tag>Portada</span></figure><figure class=""><a href="#foto-2"><img src="img/habitacion-calida.jpg" alt="Foto 2"></a></figure><figure class=""><a href="#foto-3"><img src="img/bano.jpg" alt="Foto 3"></a></figure><figure class=""><a href="#foto-4"><img src="img/exterior-atardecer.jpg" alt="Foto 4"></a></figure></div>
+<div class="row" style="margin-top:18px"><h1 style="margin:0">Habitación 102 · Doble</h1><span class="stars" style="font-size:18px" title="4 estrellas">★★★★</span></div><p class="muted">4 imágenes</p><!-- Lightbox sin JS con :target: cada foto enlaza a #foto-N; Cerrar = href="#". --><div class="lightbox" id="foto-1"><a class="lb-bg" href="#"></a><div class="lb-box"><img src="img/habitacion-doble.jpg" alt="Foto 1"><div class="lb-bar"><a href="#foto-4">Anterior</a><span>1 / 4</span><a href="#foto-2">Siguiente</a><a class="btn" href="#">Cerrar</a></div></div></div><div class="lightbox" id="foto-2"><a class="lb-bg" href="#"></a><div class="lb-box"><img src="img/habitacion-calida.jpg" alt="Foto 2"><div class="lb-bar"><a href="#foto-1">Anterior</a><span>2 / 4</span><a href="#foto-3">Siguiente</a><a class="btn" href="#">Cerrar</a></div></div></div><div class="lightbox" id="foto-3"><a class="lb-bg" href="#"></a><div class="lb-box"><img src="img/bano.jpg" alt="Foto 3"><div class="lb-bar"><a href="#foto-2">Anterior</a><span>3 / 4</span><a href="#foto-4">Siguiente</a><a class="btn" href="#">Cerrar</a></div></div></div><div class="lightbox" id="foto-4"><a class="lb-bg" href="#"></a><div class="lb-box"><img src="img/exterior-atardecer.jpg" alt="Foto 4"><div class="lb-bar"><a href="#foto-3">Anterior</a><span>4 / 4</span><a href="#foto-1">Siguiente</a><a class="btn" href="#">Cerrar</a></div></div></div>
+<div class="specs"><div><small>Tipo</small><b>DOBLE</b></div><div><small>Capacidad máxima</small><b>2 huéspedes</b></div><div><small>Precio por noche</small><b>$50.000</b></div><div><small>Número</small><b>102</b></div></div>
+<h2>Descripción</h2><p class="muted">Habitación doble con dos camas, escritorio, aire acondicionado y wifi. Vista a la costanera del río Paraná.</p></div>
+<aside><form class="panel" action="confirmar.html"><h2 style="margin:0">Reservar</h2><p><b style="font-size:20px">$50.000</b> <span class="muted">/ noche</span></p>
+<div class="dates"><div><label>Fecha de ingreso</label><input type="date" value="2026-11-20"></div><div><label>Fecha de egreso</label><input type="date" value="2026-11-23"></div></div>
+<label>Cantidad de huéspedes</label><select><option>1</option><option selected>2</option></select>
+<!-- Opciones 1..capacidadMaxima. Validaciones (ver README): huéspedes 1..capacidad; ingreso no anterior a hoy; egreso posterior a ingreso. Error ej.: "La cantidad de huéspedes supera la capacidad máxima." -->
+<!-- Si el usuario NO inició sesión, "Reservar" lo lleva a login.html (CU002) y al ingresar vuelve a confirmar la reserva (CU005 FA03). La disponibilidad se valida recién acá, al reservar. -->
+<button class="btn dark block" style="margin-top:12px" type="submit">Reservar</button></form>
+<div class="note">Para reservar tenés que <a href="login.html"><u>iniciar sesión</u></a>.</div>
+<div class="note">Podés cancelar tu reserva hasta antes del día del check-in.</div></aside></div>
+<!-- {% endblock %} --></main></div>
+<footer>Hotel Litoral · Mockup PP1 v1.4 – no funcional · Vistas: <a href="index.html"><u>visitante</u></a> · <a href="mis-reservas.html"><u>cliente</u></a> · <a href="admin-habitaciones.html"><u>administrador</u></a></footer></div></body></html>

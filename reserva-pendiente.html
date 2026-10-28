@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<!-- Twig: todo este esqueleto = templates/base.html.twig.
+     <header> = {% include '_header.html.twig' %} (menú según is_granted: visitante / ROLE_USER / ROLE_ADMIN);
+     el contenido de <main> = {% block body %}; .flash = loop de app.flashes en base. {% block title %} = <title>. -->
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reserva pendiente · Hotel Litoral</title><link rel="stylesheet" href="styles.css"></head>
+<body><div class="shell"><div class="frame">
+<header class="top"><a class="brand" href="index.html"><span class="logo">HL</span>Hotel Litoral</a>
+<nav class="pillnav"><a href="index.html">Buscar</a><a href="mis-reservas.html" class="on">Mis reservas</a><a href="perfil.html">Mi perfil</a></nav>
+<div class="user"><span class="avatar"></span>Lucas D. · <a href="index.html" class="muted">Salir</a></div></header>
+<main><div class="crumbs">Inicio › Reserva pendiente</div>
+<!-- {% block body %} -->
+<!-- CU005 paso 13: pantalla posterior a confirmar. La reserva se registró PENDIENTE (#12). Reemplaza el aviso flash. -->
+<section class="pendwrap"><article class="pendcard"><div class="pph"><img src="img/habitacion-doble.jpg" alt=""><span class="pill">Pendiente</span></div><h3>Habitación 102 · Doble</h3><div class="tdates">20 – 23 de noviembre de 2026</div><div class="pbot">2 huéspedes<br>$150.000 total</div></article>
+<div class="pendtxt"><h1>Tu reserva está pendiente</h1><p>El hotel se va a comunicar con vos para coordinar el pago.</p><a class="btn dark" href="mis-reservas.html">Entendido</a></div></section>
+<!-- {% endblock %} --></main></div>
+<footer>Hotel Litoral · Mockup PP1 v1.4 – no funcional · Vistas: <a href="index.html"><u>visitante</u></a> · <a href="mis-reservas.html"><u>cliente</u></a> · <a href="admin-habitaciones.html"><u>administrador</u></a></footer></div></body></html>
